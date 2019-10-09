@@ -29,10 +29,10 @@ function questionMarks(length) {
 
 var orm = {
     all: function(table, callback) {
-        connection.query("SELECT * FROM " + table + ";", function (err, res){
+        connection.query("SELECT * FROM " + table + ";", function (err, results){
             if (err) throw err;
 
-            callback(res);
+            callback(results);
         });
     },
     create: function(table, columns, values, callback){

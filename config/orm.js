@@ -28,7 +28,7 @@ function questionMarks(length) {
   }
 
 var orm = {
-    all: function(table, callback) {
+    read: function(table, callback) {
         connection.query("SELECT * FROM " + table + ";", function (err, results){
             if (err) throw err;
 

@@ -8,7 +8,7 @@
 </div>
 
 <div class="container w-50 pb-4">
-  <form>
+  <form class="addBurger">
     <div class="form-group">
       <label for="newBurger">Email address</label>
       <input class="form-control" id="newBurger" placeholder="A New Burger Approaches!">
@@ -44,6 +44,10 @@
             {{#if devoured}}
             <li>
               {{burger_name}}
+
+              <button class="deleteBurger" data-id="{{id}}">
+                X
+              </button>
             </li>
             {{/if}}
           {{/each}}

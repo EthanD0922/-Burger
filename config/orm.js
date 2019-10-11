@@ -1,15 +1,5 @@
 var connection = require("../config/connection.js");
 
-function questionMarks(length) {
-    var array = [];
-  
-    for (var i = 0; i < length; i++) {
-      array.push("?");
-    }
-  
-    return array.toString();
-  }
-
   //used this from the cats example /14-handlebars/activities/17-CatsApp with some var changes to help me understand it.
   function SQLobject(object) {
     var arr = [];
@@ -37,8 +27,7 @@ var orm = {
     },
     create: function(table, columns, values, callback){
         connection.query("INSERT INTO "+ table +
-        " (" + columns.toString() + ") VALUES (" +
-        questionMarks(values.length) + ");", values, function (err, res){
+        " (" + columns.toString() + ") VALUES (?);", values, function (err, res){
             if (err) throw err;
 
             callback(res)

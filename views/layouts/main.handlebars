@@ -13,16 +13,16 @@
 	</body>
 	<script>
 		$(function(){
-			$(".addBurger").on("click", function(event){
+			$(".addBurger").on("submit", function(event){
 				event.preventDefault();
 
 				$.ajax("/api/burgers", {
 					type: "POST",
 					data: {
-						burger_name: $("#newBurger").val().trim()
+						name: $("#newBurger").val().trim()
 					}
 				}).then(function(){
-					
+
 					location.reload();
 				})
 			});
